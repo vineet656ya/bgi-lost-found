@@ -2,6 +2,8 @@
 
 Campus lost-and-found platform for BGI Bhopal, created by [Vineet Yadav](https://vineet-yadav-orange.vercel.app/).
 
+**[Open the live website](https://bgi-lost-found.woollytide4.chatgpt.site/)**
+
 ## Features
 
 - Public lost/found listings, filters and recovery history.
