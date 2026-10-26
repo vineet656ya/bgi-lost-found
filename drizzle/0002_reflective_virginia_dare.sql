@@ -1,0 +1,1 @@
+ALTER TABLE `limits` ADD `expires` integer DEFAULT 0 NOT NULL;

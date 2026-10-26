@@ -1,0 +1,6 @@
+import {env} from 'cloudflare:workers';
+import {cleanupExpired} from '../../../lib/retention';
+export const dynamic='force-dynamic';
+// This idempotent maintenance operation has no caller-selected target or date.
+// It can only purge accounts already expired according to the server's campus date.
+export async function POST(){const E=env as any;const cutoff=Date.now()-60000;await E.DB.prepare("INSERT OR IGNORE INTO settings(key,value) VALUES('cleanup_lock','0')").run();const lock=await E.DB.prepare("UPDATE settings SET value=? WHERE key='cleanup_lock' AND CAST(value AS INTEGER)<?").bind(String(Date.now()),cutoff).run();if(!lock.meta?.changes)return Response.json({ok:true},{headers:{'Cache-Control':'no-store'}});try{await cleanupExpired();const more=!!await E.DB.prepare("SELECT id FROM members WHERE account_type='student' AND graduation_date IS NOT NULL AND graduation_date<=? LIMIT 1").bind(new Date(Date.now()+19800000).toISOString().slice(0,10)).first();const pending=!!await E.DB.prepare('SELECT id FROM deletion_queue LIMIT 1').first();return Response.json({ok:true,more:more||pending},{headers:{'Cache-Control':'no-store'}});}finally{await E.DB.prepare("UPDATE settings SET value='0' WHERE key='cleanup_lock'").run();}}

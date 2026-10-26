@@ -1,0 +1,41 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1792234336903,
+      "tag": "0000_lethal_black_bird",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1792238512323,
+      "tag": "0001_nostalgic_black_crow",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1792238641880,
+      "tag": "0002_reflective_virginia_dare",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1792239788312,
+      "tag": "0003_gorgeous_wonder_man",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1792240591114,
+      "tag": "0004_lyrical_power_pack",
+      "breakpoints": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.bgi.lostfound",
+      "sha256_cert_fingerprints": [
+        "89:2C:12:EC:5F:7D:E0:F8:02:30:6A:5B:63:BE:88:2B:15:8A:DB:76:68:C1:51:39:3E:AE:FE:41:D0:24:A0:C6"
+      ]
+    }
+  }
+]
